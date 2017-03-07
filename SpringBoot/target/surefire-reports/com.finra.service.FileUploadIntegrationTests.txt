@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Test set: com.finra.service.FileUploadIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 7.183 sec <<< FAILURE! - in com.finra.service.FileUploadIntegrationTests
+shouldUploadFile(com.finra.service.FileUploadIntegrationTests)  Time elapsed: 0.137 sec  <<< ERROR!
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:65314/": class path resource [com/finra/service/testupload.txt] cannot be resolved to URL because it does not exist; nested exception is java.io.FileNotFoundException: class path resource [com/finra/service/testupload.txt] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:187)
+	at org.springframework.core.io.AbstractFileResolvingResource.contentLength(AbstractFileResolvingResource.java:151)
+	at org.springframework.http.converter.ResourceHttpMessageConverter.getContentLength(ResourceHttpMessageConverter.java:94)
+	at org.springframework.http.converter.ResourceHttpMessageConverter.getContentLength(ResourceHttpMessageConverter.java:45)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.addDefaultHeaders(AbstractHttpMessageConverter.java:260)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.write(AbstractHttpMessageConverter.java:205)
+	at org.springframework.http.converter.FormHttpMessageConverter.writePart(FormHttpMessageConverter.java:373)
+	at org.springframework.http.converter.FormHttpMessageConverter.writeParts(FormHttpMessageConverter.java:353)
+	at org.springframework.http.converter.FormHttpMessageConverter.writeMultipart(FormHttpMessageConverter.java:342)
+	at org.springframework.http.converter.FormHttpMessageConverter.write(FormHttpMessageConverter.java:257)
+	at org.springframework.http.converter.FormHttpMessageConverter.write(FormHttpMessageConverter.java:89)
+	at org.springframework.web.client.RestTemplate$HttpEntityRequestCallback.doWithRequest(RestTemplate.java:882)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:650)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:613)
+	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:407)
+	at org.springframework.boot.test.web.client.TestRestTemplate.postForEntity(TestRestTemplate.java:471)
+	at com.finra.service.FileUploadIntegrationTests.shouldUploadFile(FileUploadIntegrationTests.java:44)
+
+shouldDownloadFile(com.finra.service.FileUploadIntegrationTests)  Time elapsed: 0.783 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[2]00> but was:<[5]00>
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at com.finra.service.FileUploadIntegrationTests.shouldDownloadFile(FileUploadIntegrationTests.java:59)
+

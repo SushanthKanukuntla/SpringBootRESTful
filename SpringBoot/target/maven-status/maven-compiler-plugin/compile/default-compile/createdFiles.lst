@@ -1,0 +1,8 @@
+com\finra\service\FileUploadController.class
+com\finra\storage\FileSystemStorageService.class
+com\finra\storage\StorageException.class
+com\finra\storage\StorageProperties.class
+com\finra\storage\StorageFileNotFoundException.class
+com\finra\objects\FileMetaData.class
+com\finra\Application.class
+com\finra\storage\StorageService.class

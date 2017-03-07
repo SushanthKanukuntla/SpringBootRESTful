@@ -1,0 +1,3 @@
+com\finra\ApplicationTests.class
+com\finra\service\FileUploadIntegrationTests.class
+com\finra\service\FileUploadTests.class
